@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Hosts</title>
+		<script type="text/javascript" src="prototype.js"></script>
+        <script type="text/javascript">
+        function loadHosts()
+        {            
+			var url = "service.php?class=host&method=getList";
+            var request = new Ajax.Request(
+                    url,
+                    {
+                        method: 'get',
+                        requestHeaders: {Accept: 'application/json'},
+                        onSuccess: function(req) {						
+                            var servers = req.responseText.evalJSON();										
+                            for (var i = 0; i < servers.length; i++) {																
+                                var tr = new Element('tr');
+                                for (var property in servers[i]) {
+                                    tr.appendChild(new Element('td', {}).update(servers[i][property]));
+                                }
+                                $('host_table').appendChild(tr);
+                            }
+                        }
+                    }
+            );
+        }
+		</script>
+		<style type="text/css">
+        #host_table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            width: 100%;
+			border-color:blue;
+			background-color:LightBlue;
+        }
+        #host_table th, td, tr {
+            margin: 0;
+            padding: 2px 5px;			
+        }
+        #host_table th {
+            color: #fff;
+            font-weight: bold;
+            background-color: #444;
+        }
+		/* new css rule to center the td table content */
+		#host_table td {
+            text-align: center;
+        }
+		/* new css rule to center the table in the page */
+		#content { 
+			position:absolute;
+			top:50%;
+			left: 50%;
+			margin-top: -100px;
+			margin-left: -100px; 
+			text-align: center;
+		}
+		
+        </style>
+	</head>
+	<body>
+		<div id="content">			
+			<!-- changes the link for a button -->
+			<p><input type="button" value="Load Hosts" onclick="javascript:loadHosts()" />  </p>
+			<table id="host_table">
+			   <tr><th>ID</th><th>Name</th><th>IP Address</th><th>Username</th></tr>						   
+			</table>
+		</div>	
+	</body>
+</html>
