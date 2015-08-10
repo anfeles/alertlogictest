@@ -4,8 +4,8 @@ class GetData{
     public function __construct(){    
     }
     
-	public function executeQuery($query){
-        //connect to TMDB API 
+	//connect to TMDB API 
+	public function executeQuery($query){        
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $query);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -14,17 +14,13 @@ class GetData{
         $response = curl_exec($ch);
         curl_close($ch);
         $result = json_decode($response, true);   
-        return $result;
-        //header("Content-Type:text/javascript");
-        //echo json_encode($result);       
+        return $result;       
     }
     
+	//returns the search results in json format
     public function toJSON($results){
         header("Content-Type:text/javascript");
         return json_encode($results);    
-    }
-    
-    
-    
+    }    
 }    
 ?>

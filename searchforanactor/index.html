@@ -12,7 +12,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">        
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="scriptsTableResults.js"></script>
+        <script src="scriptsSearch.js"></script>
 		<link rel="stylesheet" href="style.css">
 		<title>Search For An Actor</title>		
 	</head>
@@ -42,24 +42,24 @@
                         </div>
                     
                         <div class="form-group">
-            		    	<input id="inputTextData" class="form-control input-lg" name="inputTextData" type="text" required title="We Need A Data!"/>
+            		    	<input id="inputTextData" class="form-control input-lg" name="inputTextData" type="text" title="We Need A Data!" required autofocus/>
         				</div>  
                         <div class="form-group">
-                            <input type="button" class="btn btn-success" value="Find" onclick="javascript:loadTable()" focus/>  
+                            <input id="btnFind"  type="button" class="btn btn-success" value="Find" onclick="javascript:loadTable()"/>  
 							<input type="reset" class="btn btn-success" value="Reset" onclick="javascript:resetForm()"/>  
                         </div>        			
                     </form>
                     <br>
-                    <div id="results" class="form-group">
-                        <table id="results" class="table table-striped table-bordered table-hover table-condensed">                
-                        </table>  
-    		    	</div>                    
+                    <div id="results" class="form-group">                          
+    		    	</div>
+					<div id="showMoreModal" class="modal fade">  
+					</div>	
                 </article>
     			<aside class="col-xs-12 col-lg-3">
         		    <h3>Related Links</h3>
-					<p><a href="https://www.themoviedb.org" target="blank">The Movie DB</a></p>
-					<p><a href="http://docs.themoviedb.apiary.io/" target="blank">TMDB API Documentation</a></p>					
-					<p><a href="http://getbootstrap.com" target="blank">Bootstrap</a></p>
+					<p><a href="https://www.themoviedb.org" class="footerLinks" target="blank">The Movie DB</a></p>
+					<p><a href="http://docs.themoviedb.apiary.io/" class="footerLinks" target="blank">TMDB API Documentation</a></p>					
+					<p><a href="http://getbootstrap.com" class="footerLinks" target="blank">Bootstrap</a></p>
     			</aside>
 		
             </section>            

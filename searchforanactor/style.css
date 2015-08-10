@@ -29,12 +29,26 @@ aside
 	color:#fff;
 }
 
-a, a:hover
+a.showmore {
+	color:#007B00;
+}
+
+a.showmore:hover
+{
+	color:#000000;
+}
+
+a.footerLinks
 {
 	color:#ffffff;
 }
 
-a:visited
+a.footerLinks:hover
+{
+	color:#ffffff;
+}
+
+a.footerLinks:visited
 {
 	color:#99FF99;
 }
