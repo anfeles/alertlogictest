@@ -1,6 +1,10 @@
 <html>
 	<head>
 		<title>Hosts</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="kickstart/js/kickstart.js"></script> <!-- KICKSTART -->
+		<link rel="stylesheet" href="kickstart/css/kickstart.css" media="all" /> <!-- KICKSTART -->
+		
 		<script type="text/javascript" src="prototype.js"></script>
         <script type="text/javascript">
         function loadHosts()
@@ -27,7 +31,7 @@
 		</script>
 		<style type="text/css">
         #host_table {
-            border: 1px solid #ccc;
+            border: 2px solid #fff;
             border-collapse: collapse;
             width: 100%;
 			border-color:blue;
@@ -41,6 +45,8 @@
             color: #fff;
             font-weight: bold;
             background-color: #444;
+	    text-align: center;
+
         }
 		/* new css rule to center the td table content */
 		#host_table td {
@@ -60,8 +66,8 @@
 	</head>
 	<body>
 		<div id="content">			
-			<!-- changes the link for a button -->
-			<p><input type="button" value="Load Hosts" onclick="javascript:loadHosts()" />  </p>
+			<!-- changes the a tag for a button tag -->
+			<p><input type="button" value="Load Hosts" class="medium blue" onclick="javascript:loadHosts()" />  </p>
 			<table id="host_table">
 			   <tr><th>ID</th><th>Name</th><th>IP Address</th><th>Username</th></tr>						   
 			</table>

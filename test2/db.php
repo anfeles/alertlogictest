@@ -1,15 +1,11 @@
 <?php 
 class DB
 {
-    const HOST = 'localhost';
-    //const HOST = 'examplemaintenan.db.11797933.hostedresource.com';
-	const PORT = 3306;
-    const USER = 'root';	
-	//const USER = 'examplemaintenan';
-	const PASS = 'root';
-    //const PASS = 'Alert#123';
-    const DB   = 'example_maintenance';
-	//const DB   = 'examplemaintenan';
+    const HOST = 'examplemaintenan.db.11797933.hostedresource.com';
+    const PORT = 3306;    	
+	const USER = 'examplemaintenan';
+    const PASS = 'Alert#123';
+	const DB   = 'examplemaintenan';
     
     private $dbh;
     
@@ -26,7 +22,7 @@ class DB
     
     public static function getAll($stmt)
     {        
-		$db  = new self();
+	$db  = new self();
         $res = $db->query($stmt);
         $ret = array();
         

@@ -104,7 +104,7 @@ class Request
         //$root_name = strtolower($this->class) . "-" . strtolower($this->method);
         //$data      = array($root_name => $data);
 		
-		//disable two previous lines inasmuch as thq query returns a json string and header is not processed by prototype 
+	//disable two previous lines inasmuch as the query returns a json string and header is not processed by prototype 
         header("Content-Type:text/javascript");		
         echo json_encode($data);
     }

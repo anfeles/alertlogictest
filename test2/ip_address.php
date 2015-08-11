@@ -45,7 +45,7 @@ function netmask2bitmask($netmask)
 	}
 }
 
-//returns the number of bits in ipv4 netmask
+//it returns the number of bits in ipv4 netmask
 function calculateIpv4($ip)
 {		
 	$mascara_en_binario   = decbin( ip2long( $ip ) );		
@@ -61,7 +61,7 @@ function calculateIpv4($ip)
 	echo "Number of bits in the net mask: ". $bits."<br/><br/>";
 }
 
-//returns the number of bits in ip6 netmask
+//it returns the number of bits in ip6 netmask
 function calculateIpv6($ip) 
 { 
   			

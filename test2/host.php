@@ -6,15 +6,15 @@ class Host
     public static function getList($only_active = false)
     {        
 		static $result;
-		//declares a static variable to hold the value of $only_active
+		//I declare a static variable to hold the value of $only_active
         static $active;
 		
         if (!empty($result) && $active == $only_active) 
 			return $result;
         
-		//assigns the value of only_active$ to the new static variable
+		//I assign the value of only_active$ to the new static variable
 		$active=$only_active;
-		//modify the query by adding the 'left join' to allow all hosts have consulted
+		//I modify the query by adding the 'left join' to allow all hosts have consulted
         $stmt = "SELECT
                     hos.host_id,
                     hos.host_name,
